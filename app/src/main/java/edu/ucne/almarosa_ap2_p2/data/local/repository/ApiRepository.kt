@@ -10,10 +10,10 @@ import javax.inject.Inject
 class ApiRepository @Inject constructor(
         private val dataSource: DataSource
     ) {
-        fun getApi(): Flow<Resource<List<RepositoryDto>>> = flow {
+        fun getApi(username:String): Flow<Resource<List<RepositoryDto>>> = flow {
             try {
                 emit(Resource.Loading())
-                val Api = dataSource.listRepos()
+                val Api = dataSource.listRepos(username)
                 emit(Resource.Success(Api))
             } catch (e: Exception) {
                 emit(Resource.Error("Error: ${e.message}"))
