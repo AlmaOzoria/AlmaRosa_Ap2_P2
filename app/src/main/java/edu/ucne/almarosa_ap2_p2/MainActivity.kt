@@ -13,10 +13,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
+import dagger.hilt.android.AndroidEntryPoint
 import edu.ucne.almarosa_ap2_p2.presentacion.apiejemplo.ApiViewModel
 import edu.ucne.almarosa_ap2_p2.presentacion.navigation.ApiNavHost
 import edu.ucne.almarosa_ap2_p2.ui.theme.AlmaRosa_Ap2_P2Theme
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +31,7 @@ class MainActivity : ComponentActivity() {
 
                 ApiNavHost(
                     navHostController = navController,
-                    apiViewModel = apiViewModel,
+                    apiViewModel = ApiViewModel,
 
                 )
             }
