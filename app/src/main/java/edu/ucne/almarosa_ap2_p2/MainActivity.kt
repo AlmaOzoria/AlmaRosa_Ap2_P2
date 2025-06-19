@@ -11,6 +11,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.compose.rememberNavController
+import edu.ucne.almarosa_ap2_p2.presentacion.apiejemplo.ApiViewModel
+import edu.ucne.almarosa_ap2_p2.presentacion.navigation.ApiNavHost
 import edu.ucne.almarosa_ap2_p2.ui.theme.AlmaRosa_Ap2_P2Theme
 
 class MainActivity : ComponentActivity() {
@@ -19,12 +23,15 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AlmaRosa_Ap2_P2Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                val navController = rememberNavController()
+                val ApiViewModel: ApiViewModel = hiltViewModel()
+
+
+                ApiNavHost(
+                    navHostController = navController,
+                    apiViewModel = apiViewModel,
+
+                )
             }
         }
     }
