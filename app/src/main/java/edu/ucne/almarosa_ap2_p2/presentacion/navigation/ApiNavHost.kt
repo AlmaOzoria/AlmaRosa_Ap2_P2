@@ -26,19 +26,17 @@ fun ApiNavHost(
         composable("ApiList") {
             val uiState by apiViewModel.uiState.collectAsState()
 
-//            ApiListScreen(
-//                apiUiState = uiState,
-//                onEdit = { repo ->
-//                    navHostController.navigate("Api/${repo.name}")
-//                },
-//                onCreate = {
-//                    navHostController.navigate("Api/null")
-//                },
-//                onDelete = { repo ->
-//                    apiViewModel.deleteApi(repo.name)
-//                }
-//            )
+            ApiListScreen(
+                apiUiState = uiState,
+                onCreate = {
+                    navHostController.navigate("Api/null")
+                },
+                onEdit = {}, // Función vacía
+                onDelete = {} // Función vacía
+            )
         }
+
+    }
 
 //        composable("Api/{name}") { backStackEntry ->
 //            val repoNameParam = backStackEntry.arguments?.getString("name")
@@ -62,4 +60,3 @@ fun ApiNavHost(
 //            )
 //        }
     }
-}

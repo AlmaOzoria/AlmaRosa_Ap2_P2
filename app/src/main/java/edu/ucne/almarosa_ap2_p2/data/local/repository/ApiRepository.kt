@@ -8,16 +8,15 @@ import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class ApiRepository @Inject constructor(
-        private val dataSource: DataSource
-    ) {
-        fun getApi(username:String): Flow<Resource<List<RepositoryDto>>> = flow {
-            try {
-                emit(Resource.Loading())
-                val Api = dataSource.listRepos(username)
-                emit(Resource.Success(Api))
-            } catch (e: Exception) {
-                emit(Resource.Error("Error: ${e.message}"))
-            }
+    private val dataSource: DataSource
+) {
+    fun getApi(): Flow<Resource<List<RepositoryDto>>> = flow {
+        try {
+            emit(Resource.Loading())
+            val repos = dataSource.listRepos()
+            emit(Resource.Success(repos))
+        } catch (e: Exception) {
+            emit(Resource.Error("Error: ${e.message}"))
         }
-
     }
+}

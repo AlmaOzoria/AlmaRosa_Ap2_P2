@@ -14,7 +14,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 @Module
 object ApiModule {
-    const val BASE_URL = "https://api.github.com/users/enelramon/repos/"
+    const val BASE_URL = "https://api.github.com/"
 
     @Provides
     @Singleton
@@ -32,5 +32,4 @@ object ApiModule {
             .build()
             .create(GitHubApi::class.java)
     }
-
 }
