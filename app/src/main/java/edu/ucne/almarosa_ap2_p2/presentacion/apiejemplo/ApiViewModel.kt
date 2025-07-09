@@ -3,8 +3,8 @@ package edu.ucne.almarosa_ap2_p2.presentacion.apiejemplo
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import edu.ucne.almarosa_ap2_p2.data.local.repository.ApiRepository
-import edu.ucne.almarosa_ap2_p2.presentacion.remote.Resource
+import edu.ucne.almarosa_ap2_p2.repository.ApiRepository
+import edu.ucne.almarosa_ap2_p2.remote.Resource
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

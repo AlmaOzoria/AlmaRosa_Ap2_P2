@@ -18,7 +18,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import edu.ucne.almarosa_ap2_p2.presentacion.remote.dto.RepositoryDto
+import edu.ucne.almarosa_ap2_p2.remote.dto.RepositoryDto
 import kotlinx.coroutines.flow.*
 
 @Composable

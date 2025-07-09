@@ -1,4 +1,4 @@
-package edu.ucne.almarosa_ap2_p2.presentacion.remote.dto
+package edu.ucne.almarosa_ap2_p2.remote.dto
 
 import com.squareup.moshi.Json
 

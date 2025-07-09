@@ -1,6 +1,6 @@
-package edu.ucne.almarosa_ap2_p2.presentacion.remote
+package edu.ucne.almarosa_ap2_p2.remote
 
-import edu.ucne.almarosa_ap2_p2.presentacion.remote.dto.RepositoryDto
+import edu.ucne.almarosa_ap2_p2.remote.dto.RepositoryDto
 import javax.inject.Inject
 
 class DataSource @Inject constructor(

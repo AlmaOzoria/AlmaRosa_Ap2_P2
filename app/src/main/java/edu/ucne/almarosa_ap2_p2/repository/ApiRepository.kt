@@ -1,8 +1,8 @@
-package edu.ucne.almarosa_ap2_p2.data.local.repository
+package edu.ucne.almarosa_ap2_p2.repository
 
-import edu.ucne.almarosa_ap2_p2.presentacion.remote.DataSource
-import edu.ucne.almarosa_ap2_p2.presentacion.remote.Resource
-import edu.ucne.almarosa_ap2_p2.presentacion.remote.dto.RepositoryDto
+import edu.ucne.almarosa_ap2_p2.remote.DataSource
+import edu.ucne.almarosa_ap2_p2.remote.Resource
+import edu.ucne.almarosa_ap2_p2.remote.dto.RepositoryDto
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject

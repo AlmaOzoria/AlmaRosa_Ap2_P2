@@ -1,6 +1,6 @@
 package edu.ucne.almarosa_ap2_p2.presentacion.apiejemplo
 
-import edu.ucne.almarosa_ap2_p2.presentacion.remote.dto.RepositoryDto
+import edu.ucne.almarosa_ap2_p2.remote.dto.RepositoryDto
 
 data class ApiUiState (
         val name: String = "",
