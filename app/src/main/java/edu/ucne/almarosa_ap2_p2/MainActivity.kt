@@ -53,4 +53,5 @@ fun GreetingPreview() {
     AlmaRosa_Ap2_P2Theme {
         Greeting("Android")
     }
+
 }
