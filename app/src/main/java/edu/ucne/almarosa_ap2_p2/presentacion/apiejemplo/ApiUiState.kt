@@ -1,5 +1,6 @@
 package edu.ucne.almarosa_ap2_p2.presentacion.apiejemplo
 
+import edu.ucne.almarosa_ap2_p2.remote.dto.ContribuidorDto
 import edu.ucne.almarosa_ap2_p2.remote.dto.RepositoryDto
 
 data class ApiUiState (
@@ -10,4 +11,5 @@ data class ApiUiState (
         val errorMessage: String? = null,
         val Api: List<RepositoryDto> = emptyList(),
         val inputError: String? = null
+
 )

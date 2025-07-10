@@ -20,13 +20,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import edu.ucne.almarosa_ap2_p2.remote.dto.RepositoryDto
 import kotlinx.coroutines.flow.*
+import androidx.compose.foundation.clickable
+
 
 @Composable
 fun ApiListScreen(
     apiUiState: ApiUiState,
     onCreate: () -> Unit,
     onDelete: (RepositoryDto) -> Unit = {},
-    onEdit: (RepositoryDto) -> Unit = {}
+    onEdit: (RepositoryDto) -> Unit = {},
+    onClick: (RepositoryDto) -> Unit
 ) {
     var searchQuery by remember { mutableStateOf("") }
     var debouncedQuery by remember { mutableStateOf("") }
@@ -101,7 +104,7 @@ fun ApiListScreen(
                 else -> {
                     LazyColumn(verticalArrangement = Arrangement.spacedBy(18.dp)) {
                         items(filteredList) { repo ->
-                            ApiRow(repository = repo, onDelete = onDelete, onEdit = onEdit)
+                            ApiRow(repository = repo, onDelete = onDelete, onEdit = onEdit, onClick = onClick)
                         }
                     }
                 }
@@ -114,11 +117,14 @@ fun ApiListScreen(
 fun ApiRow(
     repository: RepositoryDto,
     onDelete: (RepositoryDto) -> Unit,
-    onEdit: (RepositoryDto) -> Unit
+    onEdit: (RepositoryDto) -> Unit,
+    onClick: (RepositoryDto) -> Unit
 ) {
     Card(
         elevation = CardDefaults.cardElevation(14.dp),
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { onClick(repository) }
     ) {
         Row(
             modifier = Modifier

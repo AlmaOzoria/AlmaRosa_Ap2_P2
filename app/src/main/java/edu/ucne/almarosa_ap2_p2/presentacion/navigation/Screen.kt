@@ -7,5 +7,8 @@ sealed class Screen {
     data object ApiList : Screen()
     @Serializable
     data class Api (val name: String) : Screen()
+    @Serializable
+    data class Contributors(val owner: String, val repo: String) : Screen()
+
 
 }
